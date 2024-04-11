@@ -1,0 +1,625 @@
+.vscs-icon {
+    display: inline-block;
+    position: relative;
+    width: calc(1.6 * var(--grid-unit));
+    height: calc(1.6 * var(--grid-unit));
+    /* prevent flex layout to affect the sice of the icons */
+    flex-shrink: 0;
+    flex-grow: 0;
+    fill: var(--vscode-editor-foreground, #444d56);
+}
+
+.vscs-icon > svg,
+.vscs-icon::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.vscs-icon::after {
+    content: '';
+    z-index: 2;
+}
+
+.vscs-icon svg,
+.vscs-icon use {
+    fill: inherit;
+    z-index: 1;
+}
+
+.vscs-icon--blue {
+    fill: var(--vscode-debugIcon-continueForeground, #0366d6);
+}
+.vscs-icon--green {
+    fill: var(--vscode-debugIcon-startForeground, #28a745);
+}
+.vscs-icon--red {
+    fill: var(--vscode-errorForeground, #cb2431);
+}
+.vscs-icon--black {
+    fill: var(--vscode-editor-foreground, #444d56);
+}
+
+.vscs-icon--white {
+    fill: var(--vscode-editor-foreground, #444d56);
+}
+/**
+ * Copyright (c) 2014 The xterm.js authors. All rights reserved.
+ * Copyright (c) 2012-2013, Christopher Jeffrey (MIT License)
+ * https://github.com/chjj/term.js
+ * @license MIT
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * Originally forked from (with the author's permission):
+ *   Fabrice Bellard's javascript vt100 for jslinux:
+ *   http://bellard.org/jslinux/
+ *   Copyright (c) 2011 Fabrice Bellard
+ *   The original design remains. The terminal itself
+ *   has been extended to include xterm CSI codes, among
+ *   other features.
+ */
+ /* xterm copyright applies to xterm styles below  */
+
+.cs-splash-screen .xterm {
+    font-feature-settings: "liga"0;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    cursor: text;
+}
+
+.cs-splash-screen .xterm.focus,
+.cs-splash-screen .xterm:focus {
+    outline: none;
+}
+
+.cs-splash-screen .xterm .xterm-helpers {
+    position: absolute;
+    top: 0;
+    /**
+   * The z-index of the helpers must be higher than the canvases in order for
+   * IMEs to appear on top.
+   */
+    z-index: 5;
+}
+
+.cs-splash-screen .xterm .xterm-helper-textarea {
+    /*
+   * HACK: to fix IE's blinking cursor
+   * Move textarea out of the screen to the far left, so that the cursor is not visible.
+   */
+    position: absolute;
+    opacity: 0;
+    left: -9999em;
+    top: 0;
+    width: 0;
+    height: 0;
+    z-index: -5;
+    /** Prevent wrapping so the IME appears against the textarea at the correct position */
+    white-space: nowrap;
+    overflow: hidden;
+    resize: none;
+}
+
+.cs-splash-screen .xterm .composition-view {
+    /* TODO: Composition position got messed up somewhere */
+    background: #000;
+    color: #FFF;
+    display: none;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.cs-splash-screen .xterm .composition-view.active {
+    display: block;
+}
+
+.cs-splash-screen .xterm .xterm-viewport {
+    /* On OS X this is required in order for the scroll bar to appear fully opaque */
+    background-color: #000;
+    overflow-y: auto;
+    cursor: default;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.cs-splash-screen .xterm .xterm-screen {
+    position: relative;
+}
+
+.cs-splash-screen .xterm .xterm-screen canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.cs-splash-screen .xterm .xterm-scroll-area {
+    visibility: hidden;
+}
+
+.cs-splash-screen .xterm-char-measure-element {
+    display: inline-block;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: -9999em;
+    line-height: 17.5px;
+}
+
+.cs-splash-screen .xterm.enable-mouse-events {
+    /* When mouse events are enabled (eg. tmux), revert to the standard pointer cursor */
+    cursor: default;
+}
+
+.cs-splash-screen .xterm.xterm-cursor-pointer {
+    cursor: pointer;
+}
+
+.cs-splash-screen .xterm.column-select.focus {
+    /* Column selection mode */
+    cursor: crosshair;
+}
+
+.cs-splash-screen .xterm .xterm-accessibility,
+.cs-splash-screen .xterm .xterm-message {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    color: transparent;
+}
+
+.cs-splash-screen .xterm .live-region {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.cs-splash-screen .xterm-dim {
+    opacity: 0.5;
+}
+
+.cs-splash-screen .xterm-underline {
+    text-decoration: underline;
+}
+.vso-workbench-root {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.vscs-workbench-page {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.vscs-workbench-page__dev-panel {
+    display: none;
+}
+
+.vscs-workbench-page__body {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: top .15s ease-in-out;
+}
+
+.vscs-workbench-page.is-dev-panel .vscs-workbench-page__dev-panel {
+    display: block;
+}
+
+.vscs-workbench-page.is-dev-panel .vscs-workbench-page__body {
+    top: var(--dev-panel-height);
+}
+
+.vscs-dev-panel-section {
+    margin-bottom: calc(1.5 * var(--grid-unit));
+}
+
+.vscs-dev-panel-section + .vscs-dev-panel-section {
+    padding-top: calc(1.5 * var(--grid-unit));
+    border-top: 1px solid var(--dev-panel-border-color);
+}
+
+.vscs-dev-panel-section__title {
+    position: relative;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    padding-left: calc(1.25 * var(--grid-unit));
+}
+
+.vscs-dev-panel-section__title::before {
+    content: '▶';
+    color: inherit;
+    font-size: 10px;
+    font-family: monospace;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: transform .075s ease-in-out;
+    transform-origin: 25% 60%;
+}
+
+.vscs-dev-panel-section.is-open .vscs-dev-panel-section__title::before {
+    transform: rotate(90deg);
+}
+
+.vscs-dev-panel-section.is-open .vscs-dev-panel-section__body {
+    display: block;
+}
+
+.vscs-dev-panel-section__title:hover {
+    opacity: .85;
+}
+
+.vscs-dev-panel-section__body {
+    display: none;
+    margin-top: calc(1 * var(--grid-unit));
+    padding: 0 calc(1.5 * var(--grid-unit));
+    border-left: 1px solid var(--dev-panel-border-color);
+    min-width: calc(20 * var(--grid-unit));
+    box-sizing: border-box;
+}
+
+.vscs-dev-panel-section__body hr {
+    margin: calc(1 * var(--grid-unit)) 0;
+    border: none;
+    border-top: 1px solid var(--dev-panel-border-color);
+}
+
+.vscs-dev-panel-section__body p,
+.vscs-dev-panel-section__body pre {
+    margin: calc(.5 * var(--grid-unit)) 0;
+}
+
+.vscs-dev-panel-section__body .vscs-dev-panel-section__footer {
+    margin-top: calc(1.5 * var(--grid-unit));
+}
+
+/* clearfix */
+.vscs-dev-panel-section__body p::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.vscs-dev-panel-section__body label {
+    color: #e1e1e1;
+    float: left;
+    margin-top: calc(.3 * var(--grid-unit));
+    margin-right: calc(.5 * var(--grid-unit));
+}
+
+.vscs-dev-panel-section__body input[type='checkbox'] {
+    float: left;
+    margin-left: 0;
+    margin-right: calc(1 * var(--grid-unit));
+}
+
+.vscs-dev-panel__current-github-api-endpoint {
+    font-size: 9px;
+}
+
+.vscs-dev-panel-header-perf-block__controls {
+    float: left;
+    display: none;
+    margin-left: calc(.5 * var(--grid-unit));
+}
+
+.vscs-dev-panel-header-perf-block__controls .vscs-dev-panel-header-perf-block__console-button {
+    padding: calc(.4 * var(--grid-unit));
+    padding-bottom: calc(.2 * var(--grid-unit));
+    height: auto;
+    vertical-align: middle;
+}
+
+.vscs-dev-panel-header-perf-block.is-ready {
+    cursor: pointer;
+}
+
+.vscs-dev-panel-header-perf-block.is-ready:hover .vscs-dev-panel-header-perf-block__controls {
+    display: block;
+}
+
+
+.vscs-dev-panel-header__section-value {
+    padding: 0 calc(.5 * var(--grid-unit));
+    overflow: hidden;
+    position: relative;
+    display: inline;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+.vscs-dev-panel-header__section-value::selection,
+.vscs-dev-panel-header__section-value a::selection {
+    background-color: var(--dev-panel-selection-color);
+    color: black;
+    padding: 20px;
+}
+
+.vscs-dev-panel-header__section-value a::selection {
+    background-color: var(--dev-panel--linkselection-color);
+}
+
+.vscs-dev-panel-header__section-value::before,
+.vscs-dev-panel-header__section-value::after {
+    content: '';
+    position: absolute;
+    top: calc(-.25 * var(--dev-panel-height));
+    height: var(--dev-panel-height);
+    width: calc(.5 * var(--grid-unit));
+    opacity: 0;
+}
+
+.vscs-dev-panel-header__section-value::before {
+    left: 0;
+}
+
+.vscs-dev-panel-header__section-value::after {
+    right: 0;
+}
+.vscs-dev-panel-header {
+    padding-right: calc(var(--dev-panel-height) + var(--grid-unit));
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    z-index: 0;
+}
+
+.vscs-dev-panel-header__section {
+    position: relative;
+    height: var(--dev-panel-height);
+    line-height: var(--dev-panel-height);
+    float: left;
+    overflow: hidden;
+}
+
+.vscs-dev-panel-header__section--text {
+    padding-left: calc(1 * var(--grid-unit));
+}
+
+.vscs-dev-panel-header__section--text + .vscs-dev-panel-header__section--text {
+    padding-left: calc(.5 * var(--grid-unit));
+}
+
+.vscs-dev-panel-header__section-title {
+    color: var(--dev-panel-text-color);
+    cursor: default;
+}
+
+.vscs-dev-panel-header__section::selection {
+    background-color: var(--dev-panel-selection-color);
+}
+
+.vscs-dev-panel-header__emoji {
+    display: inline-block;
+    border-right: 1px solid var(--dev-panel-border-color);
+    padding: 0 calc(.7 * var(--grid-unit));
+    height: 100%;
+    position: relative;
+}
+
+.vscs-dev-panel-header__emoji.is-corner::after {
+    content: '';
+    position: absolute;
+    --gap: calc(.3 * var(--grid-unit));
+    --size: calc(.3 * var(--grid-unit));
+    top: var(--gap);
+    right: var(--gap);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background-color: #00E600;
+}
+
+.vscs-dev-panel-header__git-info {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: calc(20 * var(--grid-unit));
+    cursor: pointer;
+}
+
+.vscs-dev-panel-header__git-info:hover {
+    max-width: inherit;
+}
+
+.vscs-dev-panel-header__git-info a {
+    text-decoration: none;
+    color: #0091FF;
+}
+
+.vscs-dev-panel-header__git-info a:hover {
+    opacity: .85;
+    text-decoration: underline;
+}
+
+:root {
+    --grid-unit: 1rem;
+    --button-bg-color: #0278d5;
+    --dev-panel-height: 2.5rem;
+    --dev-panel-text-color: hsla(0,0%,100%,.5);
+    --dev-panel-border-color: #2a2a2a;
+    --dev-panel-bg-emphasis: #000;
+    --dev-panel-bg-emphasis-hover: #111;
+    --dev-panel-selection-color: #00FFFF;
+    --dev-panel--linkselection-color: #00BEFF;
+}
+
+.vscs-dev-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    box-sizing: border-box;
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    transition: height .1s ease-in-out;
+    letter-spacing: 0.5px;
+}
+
+.vscs-dev-panel.is-hidden {
+    height: var(--dev-panel-height);
+    box-shadow: none;
+}
+
+.vscs-dev-panel input:focus {
+    background-color: rgba(255, 255, 255, .1);;
+    outline: none;
+    border-color: white;
+    color: white;
+}
+
+.vscs-dev-panel__input[type='text'] {
+    height: calc(1 * var(--grid-unit));
+    border-radius: 0;
+    border: 1px solid var(--dev-panel-border-color);
+    color: inherit;
+    background-color: rgba(255, 255, 255, .05);
+    font-size: 12px;
+    --input-height: calc(2.5 * var(--grid-unit));
+    height: var(--input-height);
+    line-height: var(--input-height);
+    padding: calc(.5 * var(--grid-unit));
+    box-sizing: border-box;
+    margin: calc(.5 * var(--grid-unit)) 0;
+    width: 100%;
+}
+
+.vscs-dev-panel__input--button {
+    padding: calc(.5 * var(--grid-unit)) calc(1 * var(--grid-unit));
+    margin: 0 calc(.25 * var(--grid-unit));
+    --button-height: calc(2.5 * var(--grid-unit));
+    height: var(--button-height);
+    line-height: calc((var(--button-height) / 2) - 1px);
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+}
+
+.vscs-dev-panel__input--button-margin {
+    margin-top: 5px;
+}
+
+.vscs-dev-panel__input--button:disabled {
+    opacity: .2;
+    cursor: default;
+}
+
+.vscs-dev-panel__toggle-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: var(--dev-panel-height);
+    width: var(--dev-panel-height);
+    background: var(--dev-panel-bg-emphasis);
+    font-size: 12px;
+    line-height: calc(var(--dev-panel-height) + 2px);
+    cursor: pointer;
+    text-align: center;
+    border-left: 1px solid var(--dev-panel-border-color);
+    box-sizing: content-box;
+    z-index: 1;
+}
+
+.vscs-dev-panel__toggle-button:hover {
+    background-color: var(--dev-panel-bg-emphasis-hover);
+}
+
+.vscs-dev-panel__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--dev-panel-height);
+    line-height: calc(var(--dev-panel-height) - 1px);
+    font-size: 12px;
+    background: #161818;
+    box-shadow: 0 5px 0 rgba(0,0,0,.15);
+    z-index: 0;
+    border-bottom: 1px solid var(--dev-panel-border-color);
+}
+
+.vscs-dev-panel__body {
+    position: absolute;
+    top: var(--dev-panel-height);
+    right: 0;
+    width: calc(20 * var(--grid-unit));
+    padding: calc(1.5 * var(--grid-unit));
+    padding-bottom: calc(.5 * var(--grid-unit));
+    overflow: hidden;
+    overflow-y: auto;
+    background: #161818;
+    box-shadow: 5px 5px 0 rgba(0,0,0,.15),
+                inset 0 1px 0 var(--dev-panel-border-color);
+    max-height: calc(40 * var(--grid-unit));
+    z-index: 0;
+}
+
+.vscs-dev-panel.is-hidden .vscs-dev-panel__body {
+    display: none;
+}
+
+.vscs-dev-panel.is-hidden .vscs-dev-panel__header {
+    box-shadow: none;
+}
+
+body, html {
+    padding: 0;
+	margin: 0;
+	font-weight: 400;
+    font-size: 10px;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    color: white;
+    letter-spacing: .25px;
+}
+
+
+/*# sourceMappingURL=workbench.6e3aceec.chunk.css.map*/

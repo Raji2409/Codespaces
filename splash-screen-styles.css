@@ -1,0 +1,325 @@
+:root {
+  --grid-unit: 1rem;
+  /* VS Code CSS variables */
+  --vscode-panel-background: #FAFBFD;
+  --vscode-panel-border: #DDE0E4;
+  --vscode-editor-foreground: #000;
+  --vscode-editor-background: #fff;
+  --vscode-notifications-background: #FAFBFD;
+  --vscode-notifications-foreground: #000;
+  --vscode-button-background: #159739;
+  --vscode-button-foreground: #fff;
+  --vscode-terminal-background: #fff;
+  --vscode-terminal-foreground: #000;
+  --vscode-terminalCursor-foreground: #000;
+  --vscode-terminal-selectionBackground: #CCCCCC;
+  /* Splash Screen CSS Variables */
+  --sps-link-color: #2867cf;
+  --sps-input-border: #e2e4e8;
+  --sps-input-background: #fafbfc;
+  --sps-mag-color: #949da5;
+  --sps-scrollbar: rgba(0, 0, 0, 0.12);
+  --sps-info-color: #005cc5;
+  --sps-general-background: #fff;
+  --sps-general-border: #dde0e4;
+  --sps-tab-border: #dde0e4;
+  --sps-sidebar-background: #fff;
+  --sps-tree-background: #f5f7f9;
+  --sps-bottom-background: #FAFBFD;
+  --sps-bottom-border-background: #dce0e5;
+  --sps-general-lines-gradient-start: rgba(244, 247, 249, 0);
+  --sps-general-lines-gradient-end: rgba(244, 247, 249, 1);
+  --sps-code-lines-gradient-start: rgba(255, 255, 255, 0);
+  --sps-code-lines-gradient-end: rgba(255, 255, 255, 1);
+  --sps-linear-gradient-background: linear-gradient(to right, #d1d5da 40%, #eee 50%, #d1d5da 60%);
+  --sps-linear-gradient-code-background: linear-gradient(to right, #e1e4e8 40%, #f1f1f1 50%, #e1e4e8 60%);
+  --sps-linear-gradient-tab1-background: linear-gradient(to right, #959da5 40%, #bbb 50%, #959da5 60%);
+  background-color: var(--vscode-editor-background);
+}
+
+:root.github-dark-v2 {
+  --vscode-panel-background: #0E1116;
+  --vscode-panel-border: #2F363E;
+  --vscode-editor-foreground: #C7D1DA;
+  --vscode-editor-background: #0E1116;
+  --vscode-notifications-background: #0E1116;
+  --vscode-notifications-foreground: #CCCCCC;
+  --vscode-terminal-background: #24292E;
+  --vscode-terminal-foreground: #FFFFFF;
+  --vscode-terminalCursor-foreground: #C7D1DA;
+  /* Splash Screen CSS Variables */
+  --sps-link-color: #86b8f9;
+  --sps-input-background: #0E1116;
+  --sps-input-border: #2F363E;
+  --sps-mag-color: #949da5;
+  --sps-scrollbar: rgba(255, 255, 255, 0.12);
+  --sps-info-color: #388bfd;
+  --sps-general-background: #0E1116;
+  --sps-general-border: #2F363E;
+  --sps-tab-border: #2F363E;
+  --sps-tab1-background: #0C1117;
+  --sps-tab2-background: #161b22;
+  --sps-sidebar-background: #0C1117;
+  --sps-tree-background:#161b22;
+  --sps-vscs-splash-screen-steps-pane-background:#0C1117;
+  --sps-bottom-background: #0E1116;
+  --sps-bottom-border-background: #30363d;
+  --sps-general-lines-gradient-start: #161b2200;
+  --sps-general-lines-gradient-end: #161b22;
+  --sps-code-lines-gradient-start: #2f363e00;
+  --sps-code-lines-gradient-end: #2f363e;
+  --sps-linear-gradient-background: linear-gradient(90deg, #8b949e 40%, #c9d1d9 50%, #8b949e 60%);
+  --sps-linear-gradient-code-background: linear-gradient(to right, #252424 40%, #5c5a5a 50%, #413f3f 60%);
+  --sps-linear-gradient-tab1-background: linear-gradient(90deg, #6e7681 40%, #b1bac4 50%, #6e7681 60%);
+  background-color: var(--vscode-editor-background);
+}
+
+:root.github-light-v2 {
+  --grid-unit: 1rem;
+  /* VS Code CSS variables */
+  --vscode-panel-background: #F6F8FA;
+  --vscode-panel-border: #DDE0E4;
+  --vscode-editor-foreground: #000;
+  --vscode-editor-background: #fff;
+  --vscode-notifications-background: #F6F8FA;
+  --vscode-notifications-foreground: #000;
+  --vscode-button-background: #159739;
+  --vscode-button-foreground: #fff;
+  --vscode-terminal-background: #24292E;
+  --vscode-terminal-foreground: #FFFFFF;
+  --vscode-terminalCursor-foreground: #C7D1DA;
+  --vscode-terminal-selectionBackground: #CCCCCC;
+  /* Splash Screen CSS Variables */
+  --sps-link-color: #2867cf;
+  --sps-input-border: #e2e4e8;
+  --sps-input-background: #fafbfc;
+  --sps-mag-color: #949da5;
+  --sps-scrollbar: rgba(0, 0, 0, 0.12);
+  --sps-info-color: #005cc5;
+  --sps-general-background: #fff;
+  --sps-general-border: #dde0e4;
+  --sps-tab-border: #dde0e4;
+  --sps-sidebar-background: #fff;
+  --sps-tree-background: #f5f7f9;
+  --sps-bottom-background: #F6F8FA;
+  --sps-bottom-border-background: #dce0e5;
+  --sps-general-lines-gradient-start: rgba(244, 247, 249, 0);
+  --sps-general-lines-gradient-end: rgba(244, 247, 249, 1);
+  --sps-code-lines-gradient-start: rgba(255, 255, 255, 0);
+  --sps-code-lines-gradient-end: rgba(255, 255, 255, 1);
+  --sps-linear-gradient-background: linear-gradient(to right, #d1d5da 40%, #eee 50%, #d1d5da 60%);
+  --sps-linear-gradient-code-background: linear-gradient(to right, #e1e4e8 40%, #f1f1f1 50%, #e1e4e8 60%);
+  --sps-linear-gradient-tab1-background: linear-gradient(to right, #959da5 40%, #bbb 50%, #959da5 60%);
+  background-color: var(--vscode-editor-background);
+}
+
+.cs-splash-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  letter-spacing: 0;
+}
+
+.cs-splash-screen .container {
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  align-items: center;
+  background-color: var(--sps-general-background);
+}
+
+.cs-splash-screen .container .icon-padding-top {
+  padding-top: 120px;
+}
+
+.cs-splash-screen .terminal-array {
+  margin: 35px 0px 35px 0px;
+  border-radius: 6px 6px 6px 6px;
+  background-color: var(--vscode-terminal-background);
+}
+
+.cs-splash-screen .terminal-array .terminal-container {
+  width: 656px;
+  height: 100%;
+  background-color: var(--vscode-terminal-background);
+  margin: unset;
+}
+
+.cs-splash-screen .terminal-array ::-webkit-scrollbar-track {
+  background: var(--vscode-terminal-background);        /* color of the tracking area */
+}
+
+.cs-splash-screen .windows.terminal-array ::-webkit-scrollbar {
+  background-color: transparent;
+  width: 8px;
+}
+
+.cs-splash-screen .windows.terminal-array ::-webkit-scrollbar-thumb {
+  background-color: var(--sps-scrollbar);
+}
+
+.cs-splash-screen .terminal-array .terminal.xterm {
+  height: 100%
+}
+
+.cs-splash-screen .terminal-array .first.terminal-container {
+  border-radius: 6px 6px 0px 0px;
+  height: 95px;
+}
+
+.cs-splash-screen .terminal-array .first .xterm-viewport {
+  overflow: hidden;
+}
+
+.cs-splash-screen .terminal-array .second .xterm-viewport {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.cs-splash-screen .terminal-array .second .xterm-scroll-area {
+  height: 100%;
+}
+
+.cs-splash-screen .terminal-array .second.terminal-container {
+  border-radius: 0px 0px 6px 6px;
+  height: 260px;
+  padding-bottom: 25px;
+}
+
+.cs-splash-screen .terminal-array .terminal {
+  padding: 4px 24px 0px 24px;
+}
+
+.cs-splash-screen .container .static-screen-message {
+  margin-top: 24px;
+}
+
+.cs-splash-screen .static-screen-message .restart-details {
+  margin-top: 20px;
+  color: var(--vscode-editor-foreground);
+}
+
+.cs-splash-screen .static-screen-message h5 {
+  font-weight: normal;
+}
+
+.cs-splash-screen .static-screen-message h6 {
+  font-weight: normal;
+}
+
+.cs-splash-screen .static-screen-message .error-details {
+  margin-top: 70px;
+  max-width: 320px;
+  color: var(--vscode-editor-foreground);
+}
+
+.cs-splash-screen .static-screen-message .error-details h5 {
+  text-decoration: underline;
+  text-align: left;
+}
+
+.cs-splash-screen .static-screen-message .error-details h6 {
+  text-align: left;
+  user-select: text;
+}
+
+
+.cs-splash-screen .container .bottom-hint {
+  margin-bottom: 40px;
+}
+
+.cs-splash-screen .container .bottom-hint h4 {
+  display: inline;
+  margin-right: 12px;
+}
+
+.cs-splash-screen .container .bottom-hint .learn-more {
+  margin-right: 12px;
+  margin-top: 40px;
+  display: flex;
+}
+
+.cs-splash-screen .container .bottom-hint .learn-more h4 {
+  font-size: 16px;
+}
+
+.cs-splash-screen .container .bottom-hint .learn-more .icon {
+  margin-right: 7px;
+  align-self: center;
+}
+
+.cs-splash-screen .container .bottom-hint .learn-more .tip {
+  color: #B08800;
+  margin-right: 13px;
+}
+
+.cs-splash-screen .container .bottom-hint .learn-more a {
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.cs-splash-screen .steps-pane {
+  box-sizing: border-box;
+  margin-top: 24px;
+}
+
+.cs-splash-screen h4 {
+    margin: 0px;
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--vscode-editor-foreground);
+}
+
+.vso-button {
+  display: inline-block;
+  background: var(--vscode-button-background);
+  color: var(--vscode-button-foreground);
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 30px;
+  border-radius: 6px;
+}
+
+.vso-button:hover {
+  cursor: pointer;
+}
+
+a.vso-button:hover {
+  text-decoration: underline;
+}
+
+.cs-splash-screen .steps {
+  font-family: var(--vscode-font-family, -apple-system, system-ui, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji');
+  font-size: var(--vscode-font-size, 14px);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--vscode-editor-background);
+  max-width: 800px;
+  margin: 0px auto;
+}
+
+.cs-splash-screen .terminal-container {
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+  margin: 10px 14px 10px 14px
+}
+
+.cs-splash-screen .codespaces-terminal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
